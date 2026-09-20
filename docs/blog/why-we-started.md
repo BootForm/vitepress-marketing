@@ -3,7 +3,8 @@ layout: page
 title: Why we started Cedar & Vine
 ---
 
-<div class="mx-auto max-w-2xl px-6 py-16">
+<!-- `prose` styles plain markdown automatically - see blog/index.md's comment for why. -->
+<div class="prose dark:prose-invert mx-auto max-w-2xl px-6 py-16">
 
 # Why we started Cedar & Vine
 

@@ -36,6 +36,19 @@ on purpose: add the path-scoped form only when there's an actual docs section to
 - **Tailwind via `@tailwindcss/vite`**, the real Vite plugin, not the browser CDN build the
   no-build-step templates use. This repo already has a build step, so there's no reason to reach
   for the CDN version here.
+- **Plain markdown content (a blog post's paragraphs, headings, lists) needs `@tailwindcss/typography`'s
+  `prose` class on its wrapping element, or it renders completely unstyled.** Tailwind's preflight
+  reset strips the browser's own default heading sizes, list bullets and link colours, on the
+  assumption that a Tailwind project styles everything explicitly with utility classes. A markdown
+  file's rendered headings and lists never carry any classes at all (there's no markdown-it-attrs
+  plugin here to add them), so without `prose` a page like `blog/index.md` looks completely flat:
+  no heading hierarchy, no list markers, no spacing, plain default-coloured links. `blog/index.md`
+  and both example posts already wrap their content in `prose dark:prose-invert`, with
+  `max-w-none` where a custom `max-w-*` should win over prose's own default width. Any new page
+  written as plain markdown paragraphs needs the same wrapper. A page built from custom, already-
+  hand-classed HTML (like the sections in `index.md`, or `pricing.md`'s cards) doesn't need `prose`
+  and generally shouldn't get it, since it fights with utility classes already on the same
+  elements. Style a lone bare heading on a page like that directly (`<h2 class="...">`) instead.
 - **The blog is deliberately a hand-maintained list, not a real blog engine.** Tags, dates,
   pagination and RSS are a bigger job than one template page should take on; that's what
   `vitepress-blog` is for. Don't add `createContentLoader`-based post listing here: it would

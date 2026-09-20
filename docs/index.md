@@ -33,7 +33,7 @@ features:
 
 <div class="mx-auto max-w-4xl px-6 py-16">
 
-## How it works
+<h2 id="how-it-works" class="mb-8 text-2xl font-bold tracking-tight">How it works</h2>
 
 <div class="grid gap-6 sm:grid-cols-3">
   <div>
@@ -56,7 +56,7 @@ features:
 
 <div class="mx-auto max-w-2xl px-6 py-16">
 
-## What neighbours say
+<h2 id="what-neighbours-say" class="mb-6 text-2xl font-bold tracking-tight">What neighbours say</h2>
 
 <blockquote class="border-l-2 border-brand-500 pl-5 text-lg italic opacity-80">
 They quoted a real price the same day and showed up exactly when they said they would. The garden
@@ -74,7 +74,7 @@ hasn't looked this good since we moved in.
 
 <div class="mx-auto max-w-2xl px-6 pb-16">
 
-## Get in touch {#get-in-touch}
+<h2 id="get-in-touch" class="mb-6 text-2xl font-bold tracking-tight">Get in touch</h2>
 
 <form action="https://f.bootform.com/__YOUR_FORM_ID__" method="POST" class="mx-auto flex max-w-md flex-col gap-4">
 

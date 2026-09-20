@@ -3,7 +3,8 @@ layout: page
 title: 3 things we check before every quote
 ---
 
-<div class="mx-auto max-w-2xl px-6 py-16">
+<!-- `prose` styles plain markdown automatically - see blog/index.md's comment for why. -->
+<div class="prose dark:prose-invert mx-auto max-w-2xl px-6 py-16">
 
 # 3 things we check before every quote
 

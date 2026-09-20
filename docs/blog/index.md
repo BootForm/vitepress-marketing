@@ -6,7 +6,12 @@ layout: page
 title: Blog
 ---
 
-<div class="mx-auto max-w-2xl px-6 py-16">
+<!-- `prose` (from @tailwindcss/typography) styles plain markdown - headings, lists, links - without
+     needing a Tailwind class on every single element. `max-w-none` drops prose's own default
+     65-character width so our own `max-w-2xl` on this div wins instead. Any future blog post
+     written in plain markdown gets this styling for free, which is the whole point: a reader
+     shouldn't have to hand-class every paragraph just to write a post. -->
+<div class="prose dark:prose-invert mx-auto max-w-2xl px-6 py-16">
 
 # Blog
 
