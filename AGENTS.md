@@ -42,6 +42,15 @@ on purpose: add the path-scoped form only when there's an actual docs section to
   duplicate that repo's whole reason to exist.
 - **Comments in the frontmatter and config are the lesson**, not clutter. Keep `CHANGE ME` markers
   where the reader is meant to edit, and keep them rare enough to still mean something.
+- **Link internally with markdown syntax (`[text](/path)`), never a raw `<a href="/path">` tag.**
+  VitePress rewrites a markdown-syntax link's `href` to include `base` at build time; it leaves a
+  raw HTML anchor's `href` completely untouched. A raw `<a href="/#get-in-touch">` builds without
+  error and works in `npm run dev` (which serves from `/`), then silently points at the wrong URL
+  once deployed to a subpath. Need styling markdown's plain link syntax can't give you (a button
+  look, say)? Put the classes on an inline element inside the link text instead:
+  `` [<span class="...">Get a free quote</span>](/#get-in-touch) `` still renders as one `<a>`,
+  still gets `base`-rewritten, and still carries the classes. `pricing.md`'s own CTA does exactly
+  this.
 
 ## The form
 

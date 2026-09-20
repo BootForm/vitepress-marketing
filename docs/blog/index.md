@@ -15,5 +15,6 @@ title: Blog
      a link here each time you add a post file next to this one. -->
 
 - [Why we started Cedar & Vine](/blog/why-we-started)
+- [3 things we check before every quote](/blog/three-things-we-check)
 
 </div>

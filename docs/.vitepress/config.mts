@@ -21,6 +21,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Pricing', link: '/pricing' },
       { text: 'Blog', link: '/blog/' },
     ],
 

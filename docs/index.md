@@ -26,10 +26,53 @@ features:
     details: Leaves in autumn, mulch in spring, storm damage whenever it happens.
 ---
 
+<!-- ───── How it works ─────
+     Plain markdown and HTML, same as the form section below. Everything on this page after the
+     frontmatter is just the page's normal content; `layout: home` only changes what renders above
+     it (the hero and features grid), not how content below is written. -->
+
+<div class="mx-auto max-w-4xl px-6 py-16">
+
+## How it works
+
+<div class="grid gap-6 sm:grid-cols-3">
+  <div>
+    <p class="text-sm font-semibold text-brand-500">1. Tell us about your yard</p>
+    <p class="text-sm opacity-70">Send a few photos and what you're hoping for. Takes two minutes.</p>
+  </div>
+  <div>
+    <p class="text-sm font-semibold text-brand-500">2. Get a free quote</p>
+    <p class="text-sm opacity-70">A real price, not a "call for pricing," usually within a day.</p>
+  </div>
+  <div>
+    <p class="text-sm font-semibold text-brand-500">3. We show up and do it</p>
+    <p class="text-sm opacity-70">On the date we agreed, with everything we need.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- ───── Testimonial ───── -->
+
+<div class="mx-auto max-w-2xl px-6 py-16">
+
+## What neighbours say
+
+<blockquote class="border-l-2 border-brand-500 pl-5 text-lg italic opacity-80">
+They quoted a real price the same day and showed up exactly when they said they would. The garden
+hasn't looked this good since we moved in.
+</blockquote>
+
+<p class="text-sm opacity-50">(a happy customer, not yet you)</p>
+
+</div>
+
 <!-- ───── The form ─────
      Replace __YOUR_FORM_ID__ below with the ID you generate in step 3 of the README. Everything
      else here already works. This is plain HTML inside a markdown file, which VitePress renders
      as-is: no Vue component needed for a form this simple. -->
+
+<div class="mx-auto max-w-2xl px-6 pb-16">
 
 ## Get in touch {#get-in-touch}
 
@@ -60,3 +103,5 @@ features:
     Send
   </button>
 </form>
+
+</div>
