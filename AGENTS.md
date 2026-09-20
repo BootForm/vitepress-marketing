@@ -1,0 +1,70 @@
+# Working in this repo
+
+This is a teaching template: VitePress, deliberately configured as a marketing site instead of the
+documentation site its defaults assume. Someone (human or AI agent) clones it, edits a few files,
+and gets a real multi-page site with a blog and a working contact form. Keep it that way.
+
+## The one rule this whole repo exists to teach
+
+**Every page needs `layout: home` or `layout: page` in its frontmatter. Never leave a marketing
+page on VitePress's default `layout: doc`.**
+
+`layout: doc` is what VitePress calls a documentation article: a sidebar (if one is configured for
+that path), a "previous/next page" footer, a prose-width content column. That is correct for
+actual documentation and wrong for a home page, a pricing page, or a blog post index. Every page in
+`docs/` in this template already sets `layout: home` or `layout: page` for exactly this reason.
+When adding a new top-level page, set one of those two explicitly rather than leaving the
+frontmatter empty.
+
+If you genuinely add a documentation section later (a `/docs/` folder), scope its sidebar to that
+path only: `sidebar: { '/docs/': [...] }` in `config.mts`, never a bare `sidebar: [...]` with no
+path key. An unscoped sidebar applies to every page on the site, including the home page, which is
+the single most common way an LLM-generated "marketing site" ends up looking like a documentation
+site with the words changed. This repo's own `config.mts` has no `sidebar` key at all right now,
+on purpose: add the path-scoped form only when there's an actual docs section to point it at.
+
+## The constraints that define this repo
+
+- **A real build step, unlike `first-website`/`one-page-site`.** This repo needs Node.js, `npm
+  install`, and a terminal. That's the point: it's the next step up for someone who already has a
+  zero-install site and wants several pages that share a design.
+- **`base` in `config.mts` must match how the site is actually served.** A GitHub Pages project
+  site (not `yourname.github.io` itself) is served from a subpath, so every built asset link needs
+  to know that subpath at build time or it 404s in production while working fine in `npm run dev`
+  (which always serves from the root and never exercises `base` at all). Renaming the repo or
+  moving to a custom domain both mean updating `base` to match, in the same commit.
+- **Tailwind via `@tailwindcss/vite`**, the real Vite plugin, not the browser CDN build the
+  no-build-step templates use. This repo already has a build step, so there's no reason to reach
+  for the CDN version here.
+- **The blog is deliberately a hand-maintained list, not a real blog engine.** Tags, dates,
+  pagination and RSS are a bigger job than one template page should take on; that's what
+  `vitepress-blog` is for. Don't add `createContentLoader`-based post listing here: it would
+  duplicate that repo's whole reason to exist.
+- **Comments in the frontmatter and config are the lesson**, not clutter. Keep `CHANGE ME` markers
+  where the reader is meant to edit, and keep them rare enough to still mean something.
+
+## The form
+
+The `action` ships as the literal placeholder `https://f.bootform.com/__YOUR_FORM_ID__`.
+
+**Never replace it with a real form ID.** A form ID is the entire claim credential: whoever claims
+one first owns it permanently, and every fork then delivers its visitors' messages to that person.
+An unclaimed ID also exposes held submissions to anyone who reads the repo. The reader generates
+their own in step 4 of the README. This is not negotiable and is not a placeholder-for-convenience.
+
+The honeypot input must stay. It is hidden, unlabelled to screen readers, and filtering depends on
+it being submitted empty.
+
+## Writing style
+
+- Second person, present tense, short sentences.
+- Say what will happen before asking them to run something, and say what they should see after.
+- **No em dashes or en dashes.** Use a comma, a colon, a full stop, or brackets.
+- No AI attribution in commits or pull requests, here or anywhere else in this organisation.
+- Never claim BootForm offers EU data residency, a DPA, or an uptime SLA. It does not.
+
+## Before changing anything
+
+Run `npm run build` locally before committing. A build failure in GitHub Actions is slower to
+diagnose than one on your own machine, and the workflow in this repo doesn't do anything `npm run
+build` doesn't already do.
