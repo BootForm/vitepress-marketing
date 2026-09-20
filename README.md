@@ -30,6 +30,10 @@ You need:
 - [Node.js](https://nodejs.org) 20 or later installed on your computer.
 - Some comfort with a terminal. `git clone`, `npm install`, `npm run dev`, that level.
 
+Don't have some of this yet, or not sure how? [Setting up your
+computer](https://bootform.com/docs/computer-setup) walks through installing Git and Node.js, a
+basic terminal tutorial, and installing and using VS Code, from scratch.
+
 If any of that sounds like too much right now, [first-website](https://github.com/BootForm/first-website)
 needs none of it and still ends with a real site and a working form.
 
