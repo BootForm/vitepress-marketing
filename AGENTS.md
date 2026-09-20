@@ -62,6 +62,13 @@ on purpose: add the path-scoped form only when there's an actual docs section to
   "Built with vitepress-marketing" credit and its link in place; it's the same permanent
   attribution `first-website` and `one-page-site` keep in their own hand-written footers, not a
   `CHANGE ME` placeholder.
+- **The logo is one file, referenced twice, by two different mechanisms.** `docs/public/logo.svg`
+  is a `CHANGE ME` placeholder: replace the file (any image format, same filename) and both the
+  header and the footer pick it up, no code change needed. The header uses `config.mts`'s built-in
+  `logo:` option, which VitePress base-prefixes itself. The footer's `<img>` is our own, in
+  `theme/index.ts`, so it needs `withBase('/logo.svg')` explicitly, same as any other dynamic
+  href/src outside markdown-it's link transform (see the link-handling entry above). If you rename
+  the file, update both places, not just one.
 - **Link internally with markdown syntax (`[text](/path)`), never a raw `<a href="/path">` tag.**
   VitePress rewrites a markdown-syntax link's `href` to include `base` at build time; it leaves a
   raw HTML anchor's `href` completely untouched. A raw `<a href="/#get-in-touch">` builds without

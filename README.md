@@ -74,6 +74,9 @@ Look for the lines marked `CHANGE ME`, across a few files:
 
 - **`docs/.vitepress/config.mts`**: your site's title and description, the nav links, your social
   links.
+- **`docs/public/logo.svg`**: your logo. Replace the file itself (any image format works, keep the
+  filename `logo.svg` or update the two places that reference it, listed in `AGENTS.md`) and it
+  updates in both the header and the footer, no other change needed.
 - **`docs/.vitepress/theme/style.css`**: your brand colour. One value, used everywhere: buttons,
   links, VitePress's own accent colour.
 - **`docs/index.md`**: the whole home page. The `hero` and `features` blocks at the top are plain
