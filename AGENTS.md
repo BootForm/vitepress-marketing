@@ -55,6 +55,13 @@ on purpose: add the path-scoped form only when there's an actual docs section to
   duplicate that repo's whole reason to exist.
 - **Comments in the frontmatter and config are the lesson**, not clutter. Keep `CHANGE ME` markers
   where the reader is meant to edit, and keep them rare enough to still mean something.
+- **The site-wide footer is a `theme/index.ts` override, not a `themeConfig.footer` entry.**
+  VitePress's built-in `themeConfig.footer` option only renders on `layout: doc` pages, never on
+  `layout: home` or `layout: page`, which is every page in this repo. The `layout-bottom` slot,
+  used in a custom `Layout` render function, is what actually shows on every layout. Leave the
+  "Built with vitepress-marketing" credit and its link in place; it's the same permanent
+  attribution `first-website` and `one-page-site` keep in their own hand-written footers, not a
+  `CHANGE ME` placeholder.
 - **Link internally with markdown syntax (`[text](/path)`), never a raw `<a href="/path">` tag.**
   VitePress rewrites a markdown-syntax link's `href` to include `base` at build time; it leaves a
   raw HTML anchor's `href` completely untouched. A raw `<a href="/#get-in-touch">` builds without
