@@ -7,7 +7,7 @@ title: Pricing
 
 <div class="mx-auto max-w-3xl px-6 py-16">
 
-<h1 class="mb-8 text-3xl font-bold tracking-tight">Pricing</h1>
+<h1 class="mb-8! text-3xl! font-bold! tracking-tight">Pricing</h1>
 
 <!-- CHANGE ME: your own packages and prices. Two is a reasonable minimum; add a third if you
      genuinely have a distinct tier, but a page with one price and a "contact us for anything
