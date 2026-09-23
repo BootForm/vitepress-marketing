@@ -26,7 +26,7 @@ title: Pricing
   </div>
 </div>
 
-<p class="mt-6 text-sm opacity-50">Every yard is different. These are starting points, not a menu.</p>
+<p class="mt-6! text-sm opacity-50">Every yard is different. These are starting points, not a menu.</p>
 
 [<span class="mt-4 inline-block rounded-md bg-brand-500 px-5 py-2 font-medium text-white hover:bg-brand-600">Get a free quote</span>](/#get-in-touch)
 
