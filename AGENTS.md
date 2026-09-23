@@ -91,6 +91,16 @@ their own in step 4 of the README. This is not negotiable and is not a placehold
 The honeypot input must stay. It is hidden, unlabelled to screen readers, and filtering depends on
 it being submitted empty.
 
+## Adding a new kind of content
+
+Want a section this template doesn't have yet, such as books, team members, events, or services?
+Use the `add-collection` skill from [`BootForm/site-skills`](https://github.com/BootForm/site-skills)
+(`/plugin marketplace add BootForm/site-skills`, then `/plugin install vitepress-sites@site-skills`).
+It copies a shared card component, an entry header, a data loader and a listing page into this
+repo, following every convention in this file, so each new entry afterwards is one markdown file.
+The same files and steps are readable without the plugin, under
+`plugins/vitepress-sites/skills/add-collection/` in that repo. It is also the way to replace the hand-maintained blog list with a generated one, if you outgrow it.
+
 ## Writing style
 
 - Second person, present tense, short sentences.
