@@ -175,6 +175,9 @@ VitePress is meant to be used for this, not the docs-site defaults.
 
 ### Where to go next
 
+- [`add-collection`](https://github.com/BootForm/site-skills/tree/main/plugins/vitepress-sites/skills/add-collection)
+  to add a new kind of content (books, team members, events) with its own listing page and a
+  page per entry. Works with Claude Code, or as a step-by-step you can follow by hand.
 | | |
 |---|---|
 | **A real blog engine** | [vitepress-blog](https://github.com/BootForm) when you want tags, dates and RSS, not a hand-maintained list. |
