@@ -48,7 +48,18 @@ on purpose: add the path-scoped form only when there's an actual docs section to
   written as plain markdown paragraphs needs the same wrapper. A page built from custom, already-
   hand-classed HTML (like the sections in `index.md`, or `pricing.md`'s cards) doesn't need `prose`
   and generally shouldn't get it, since it fights with utility classes already on the same
-  elements. Style a lone bare heading on a page like that directly (`<h2 class="...">`) instead.
+  elements. Style a lone bare heading on a page like that directly (`<h2 class="...">`) instead,
+  with `!` on its size, weight and margin classes (`text-3xl! font-bold! mb-8!`, as `pricing.md`
+  does): VitePress's own `base.css` resets headings outside any `@layer`, so a plain utility class
+  on a heading silently loses to it.
+- **`prose` blocks are the one exception, handled once in `style.css`.** The same unlayered
+  resets (VitePress's own `base.css`: `h1`-`h6` at 16px, `p` and lists with no margin, lists with no
+  bullets, links with no colour) also flatten every `prose` block, and `!` can't fix that, because
+  `prose` styles child elements the markdown gives you no class on. Confirmed live 2026-09-23: every
+  `# Heading` in a `prose` wrapper rendered at body size, with no paragraph spacing. The last rule in
+  `docs/.vitepress/theme/style.css` fixes it with `revert-layer`, handing exactly those properties
+  back to the layered `prose` rules, scoped to `.prose` and skipping `not-prose`. Keep that rule;
+  markdown inside a `prose` wrapper needs no `!` classes of its own.
 - **The blog is deliberately a hand-maintained list, not a real blog engine.** Tags, dates,
   pagination and RSS are a bigger job than one template page should take on; that's what
   `vitepress-blog` is for. Don't add `createContentLoader`-based post listing here: it would
