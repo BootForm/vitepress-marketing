@@ -45,7 +45,7 @@ Click the green **Use this template** button at the top of this page, then **Cre
 repository**. Name it `vitepress-marketing`, or whatever you like.
 
 > **Naming it something other than `vitepress-marketing`?** Open `docs/.vitepress/config.mts` and
-> change `base: '/vitepress-marketing/'` to match your repo's actual name (`/your-repo-name/`).
+> change `base: '/vitepress-marketing/'` (and the favicon path under `head`, in the same file) to match your repo's actual name (`/your-repo-name/`).
 > Get this wrong and the deployed site looks completely unstyled, while `npm run dev` still works
 > fine locally, since the dev server never uses `base`.
 
@@ -175,9 +175,11 @@ VitePress is meant to be used for this, not the docs-site defaults.
 
 ### Where to go next
 
-- [`add-collection`](https://github.com/BootForm/site-skills/tree/main/plugins/vitepress-sites/skills/add-collection)
-  to add a new kind of content (books, team members, events) with its own listing page and a
-  page per entry. Works with Claude Code, or as a step-by-step you can follow by hand.
+- [`site-skills`](https://github.com/BootForm/site-skills) if you use Claude Code: commands to add
+  page sections, add a new kind of content (books, team members, events), change the theme and
+  swap icons, all following this template's conventions.
+- [`site-sections`](https://bootform.github.io/site-sections/) for copy-paste page sections (heroes,
+  pricing, FAQs, footers) that survive VitePress's own styles.
 | | |
 |---|---|
 | **A real blog engine** | [vitepress-blog](https://github.com/BootForm) when you want tags, dates and RSS, not a hand-maintained list. |

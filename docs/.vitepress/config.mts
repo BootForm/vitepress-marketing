@@ -14,6 +14,12 @@ export default defineConfig({
   // dev server always serves from the root and never hits this.
   base: '/vitepress-marketing/',
 
+  head: [
+    // The browser tab icon. `head` links are not base-prefixed by VitePress, so this path includes
+    // `base` by hand: CHANGE ME alongside `base` if you rename the repo or move to a custom domain.
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-marketing/logo.svg' }],
+  ],
+
   vite: {
     plugins: [tailwindcss()],
   },
