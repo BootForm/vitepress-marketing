@@ -4,7 +4,7 @@ This one is a step up from [first-website](https://github.com/BootForm/first-web
 [one-page-site](https://github.com/BootForm/one-page-site): several pages that share a design, a
 blog, and a real build step. It needs Node.js and a terminal, which those two don't.
 
-By the end you will have a home page, a blog, and a working contact form, built with
+By the end you will have a home page, a blog with search, and a working contact form, built with
 [VitePress](https://vitepress.dev) and deployed automatically by GitHub Actions.
 
 **[See what you are building →](https://bootform.github.io/vitepress-marketing/)**
@@ -87,7 +87,8 @@ Look for the lines marked `CHANGE ME`, across a few files:
   YAML frontmatter, not Vue components: change the text, add or remove a feature, nothing to
   recompile by hand.
 - **`docs/blog/index.md`** and **`docs/blog/why-we-started.md`**: the example post. Add a new post
-  by copying `why-we-started.md`, and link it from `blog/index.md`.
+  by copying `why-we-started.md`, and link it from `blog/index.md`. Search picks up the new post
+  by itself, as long as it keeps a `# Heading` of its own.
 
 Save a file and check the browser tab running `npm run dev`. It updates within a second or two.
 
@@ -202,6 +203,11 @@ A typo in frontmatter YAML (the block between `---` lines) is the most common ca
 **The Actions deploy fails.** Open the failed run in the **Actions** tab and read its log; it's
 almost always the same error `npm run build` would show locally. Run `npm run build` on your own
 computer first to catch it there, where it's faster to fix.
+
+**Search misses a post, or finds a page you don't want in the results.** Search runs entirely in
+the browser (no service, no API key) and indexes each page by its Markdown headings, so a post
+with no `# Heading` of its own won't show up: give it one. Keep a page out with `search: false` in
+its frontmatter, as `docs/blog/index.md` does.
 
 **The form shows raw text instead of a nice page.** You are seeing the response as JSON. That is
 normal for now. Once you claim the form you can set a redirect so people land back on your site.

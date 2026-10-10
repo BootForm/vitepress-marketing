@@ -3,6 +3,8 @@
 # way the home page uses `layout: home`. Leave this frontmatter out and this becomes a regular docs
 # article instead, which is the exact mistake this whole template exists to prevent.
 layout: page
+# Kept out of search: this page is only a list of links to the posts, which are searchable themselves.
+search: false
 title: Blog
 ---
 

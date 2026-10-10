@@ -36,6 +36,14 @@ export default defineConfig({
       { text: 'Blog', link: '/blog/' },
     ],
 
+    // Full-text search, built into VitePress: the index is made at build time and searched in the
+    // browser, so it costs nothing to host and needs no account or API key. The search box appears
+    // in the nav (press "/" or Ctrl+K to open it). A page you don't want in the results opts out
+    // with `search: false` in its frontmatter, as blog/index.md does.
+    search: {
+      provider: 'local',
+    },
+
     // No `sidebar` key at all: the default theme only renders a sidebar for a section that has
     // one configured. If you add a `/docs/` section later, scope its sidebar to that path only
     // (`sidebar: { '/docs/': [...] }`), the same way the real bootform.com marketing site does.
