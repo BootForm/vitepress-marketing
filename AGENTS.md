@@ -64,6 +64,14 @@ on purpose: add the path-scoped form only when there's an actual docs section to
   pagination and RSS are a bigger job than one template page should take on; that's what
   `vitepress-blog` is for. Don't add `createContentLoader`-based post listing here: it would
   duplicate that repo's whole reason to exist.
+- **Search is VitePress's own local search, and it is for blog posts** (`themeConfig.search` in
+  `config.mts`, `provider: 'local'`). The index is built with the site and searched in the
+  browser, so there is nothing to host. It splits each page into sections at its Markdown headings
+  (`# Heading`), so a page shows up only if it has at least one. Both example posts do, inside
+  their `prose` wrapper; a new post needs one too. `blog/index.md` sets `search: false` because it
+  is only links to the posts. `index.md` and `pricing.md` stay out on their own: their headings are
+  raw HTML (`<h2 ...>`), which the index ignores. Don't swap in Algolia or another hosted search;
+  a template should keep working with no account.
 - **Comments in the frontmatter and config are the lesson**, not clutter. Keep `CHANGE ME` markers
   where the reader is meant to edit, and keep them rare enough to still mean something.
 - **The site-wide footer is a `theme/index.ts` override, not a `themeConfig.footer` entry.**
