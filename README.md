@@ -209,8 +209,10 @@ the browser (no service, no API key) and indexes each page by its Markdown headi
 with no `# Heading` of its own won't show up: give it one. Keep a page out with `search: false` in
 its frontmatter, as `docs/blog/index.md` does.
 
-**The form shows raw text instead of a nice page.** You are seeing the response as JSON. That is
-normal for now. Once you claim the form you can set a redirect so people land back on your site.
+**After sending, people land on a plain "Thanks" page.** That is BootForm's own page, and it is what
+visitors see once the form is claimed. To send them back to your site instead, add a hidden field
+inside the form: `<input type="hidden" name="_redirect" value="https://yourname.com/thanks.html">`.
+The address has to be on the same site as the form.
 
 ## Licence
 
