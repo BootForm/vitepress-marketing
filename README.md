@@ -181,10 +181,11 @@ VitePress is meant to be used for this, not the docs-site defaults.
   swap icons, all following this template's conventions.
 - [`site-sections`](https://bootform.github.io/site-sections/) for copy-paste page sections (heroes,
   pricing, FAQs, footers) that survive VitePress's own styles.
+
 | | |
 |---|---|
-| **A real blog engine** | [vitepress-blog](https://github.com/BootForm) when you want tags, dates and RSS, not a hand-maintained list. |
-| **A portfolio** | [vitepress-portfolio](https://github.com/BootForm) when you have case studies to show. |
+| **A real blog engine** | [vitepress-blog](https://github.com/BootForm/vitepress-blog) when you want tags, dates and RSS, not a hand-maintained list. |
+| **A portfolio** | [vitepress-portfolio](https://github.com/BootForm/vitepress-portfolio) when you have case studies to show. |
 | **More form options** | File uploads, autoresponders, Discord and Slack: [bootform.com/docs](https://bootform.com/docs/). |
 
 ### Stuck?
