@@ -214,6 +214,12 @@ visitors see once the form is claimed. To send them back to your site instead, a
 inside the form: `<input type="hidden" name="_redirect" value="https://yourname.com/thanks.html">`.
 The address has to be on the same site as the form.
 
+## Like it?
+
+If this saved you some time, a star on this repo helps other people find it. Everything else
+BootForm publishes is at [github.com/BootForm](https://github.com/BootForm): more templates, form
+styles and page sections, all free to copy.
+
 ## Licence
 
 MIT. Do whatever you like with it, including using it for a real business.
